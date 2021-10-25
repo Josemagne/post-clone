@@ -1,9 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import Topnav from "./components/Topnav";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Topnav />
+    </div>
+  );
 }
 
 export default App;

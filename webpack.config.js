@@ -13,9 +13,10 @@ const config = {
   output: {
     path: resolve(__dirname, "dist"),
     filename: "bundle.js",
+    publicPath: "/",
   },
   resolve: {
-    extensions: [".tsx"],
+    extensions: [".tsx", ".js", ".jsx", ".ts"],
   },
   module: {
     rules: [
@@ -48,11 +49,19 @@ const config = {
           },
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
+      },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./public/index.html",
+      template: resolve(__dirname, "src", "index.html"),
       filename: "index.html",
       inject: "body",
     }),
@@ -65,9 +74,12 @@ if (isProduction) {
   };
 } else {
   config.devServer = {
-    port: 9001,
-    open: true,
-    hot: true,
+    static: resolve(__dirname, "public"),
     compress: true,
+    hot: true,
+    host: "localhost",
+    port: 8081,
   };
 }
+
+module.exports = config;
