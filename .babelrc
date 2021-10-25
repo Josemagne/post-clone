@@ -1,0 +1,3 @@
+{
+  "presets": ["@babel/core", "@babel/react", "@babel/typescript"]
+}
