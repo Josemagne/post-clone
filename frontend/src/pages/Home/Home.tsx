@@ -9,6 +9,7 @@ const Home = (props: Props) => {
     <div className="home">
       <nav className="navbar navbar-expand-lg">
         <NavLink to="/">Home</NavLink>
+        <NavLink to="/personsList">PersonsList</NavLink>
         <div
           className="navbar-toggler"
           data-bs-toggle="collapse"

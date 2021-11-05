@@ -15,14 +15,11 @@ import PersonsList from "./pages/PersonsList/PersonsList";
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Topnav />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/personhandler" element={<PersonsHandler />} />
-          <Route path="/personsList" element={<PersonsList />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/personhandler" element={<PersonsHandler />} />
+        <Route path="/personsList" element={<PersonsList />} />
+      </Routes>
     </Router>
   );
 }
