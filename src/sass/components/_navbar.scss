@@ -1,0 +1,96 @@
+// ANCHOR ### burger
+.burger-container {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 100px;
+}
+.burger-image {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  /* stretches the .bar elements */
+  justify-content: space-between;
+  cursor: pointer;
+}
+.tab {
+  /* take up the whole width */
+  width: 100%;
+  height: 25%;
+  display: block;
+  /* makes tab distinguishable */
+  background-color: black;
+}
+
+.burgerClicked {
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/* rotate 45deg */
+@keyframes burgerOpenFirst {
+  from {
+    transform: rotate(0) translateY(0) translateX(0);
+  }
+  to {
+    transform: rotate(40deg) translateY(25px) translateX(25px);
+  }
+}
+
+/* should dissapear */
+@keyframes burgerOpenMiddle {
+  from {
+    transform: translateX(0);
+    opacity: 0.2;
+  }
+  to {
+    transform: translateX(-50px);
+    /* make the middle tab disappear */
+    opacity: 0;
+    display: none;
+  }
+}
+/* rotate 45deg */
+@keyframes burgerOpenLast {
+  from {
+    transform: rotate(0) translateY(0) translateX(0);
+  }
+  to {
+    transform: rotate(-40deg) translateY(-25px) translateX(25px);
+  }
+}
+
+/* ANCHOR ## close btn animation */
+
+@keyframes burgerCloseFirst {
+  from {
+    transform: rotate(40deg) translateY(25px) translateX(25px);
+  }
+  to {
+    transform: rotate(0) translateY(0) translateX(0);
+  }
+}
+
+@keyframes burgerCloseMiddle {
+  from {
+    transform: translateX(-50px);
+    /* make the middle tab disappear */
+    opacity: 0;
+    display: none;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    display: block;
+  }
+}
+
+@keyframes burgerCloseLast {
+  from {
+    transform: rotate(-40deg) translateY(-25px) translateX(25px);
+  }
+  to {
+    transform: rotate(0) translateY(0) translateX(0);
+  }
+}
