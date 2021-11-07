@@ -61,11 +61,14 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, "src", "index.html"),
+      template: resolve(__dirname, "/public", "index.html"),
       filename: "index.html",
       inject: "body",
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 if (isProduction) {
