@@ -57,6 +57,16 @@ const config = {
           },
         ],
       },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"],
+      },
+      // ANCHOR js
+      {
+        test: /\.js$/,
+        loader: "babel-loader",
+        exclude: /node_modules/,
+      },
     ],
   },
   plugins: [
