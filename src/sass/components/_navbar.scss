@@ -1,0 +1,21 @@
+// ANCHOR ### .navbar ###
+.navbar {
+  // ANCHOR ## .subnav ##
+  .subnav {
+    button {
+      outline: none;
+      border: none;
+    }
+    .subnav-content {
+      display: none;
+    }
+  }
+  // ANCHOR ## Animations ##
+  // If a tab is hovered
+  @keyframes hoveredOn {
+  }
+
+  // If a tab goes from hovered to not hovered
+  @keyframes hoverdOff {
+  }
+}
