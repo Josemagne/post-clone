@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { bindActionCreators, Dispatch } from "redux";
-import { buttonActionCreators } from "../../state";
+import useAppDispatch from "../../hooks/useAppDispatch";
 import Button from "./subcomponents/Button";
 
 const Navbar = () => {
-  // Dispatch action ADD_BUTTON
-  const {} = bindActionCreators(buttonActionCreators, useDispatch());
+  /**
+   * Lets us dispatch actions to the store
+   */
+  const dispatch = useAppDispatch();
+
   const [btn, setBtn] = useState(0);
 
   //   useEffect(() => {}, [btn]);

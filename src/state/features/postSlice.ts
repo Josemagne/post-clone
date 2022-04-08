@@ -2,13 +2,13 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 interface InitialState {
     buttons: {
-        buttonName: string;
+        buttonName: string | null;
     }
 }
 
 const initialState: InitialState = {
     buttons: {
-        buttonName: ""
+        buttonName: null
     }
 
 
